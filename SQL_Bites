@@ -1,0 +1,34 @@
+SELECT id, title, realise_year
+FROM albums
+WHERE title = 'Doolittle';
+Challenge 1 - 
+Find the titles of the albums released by 'Pixies' and released between 1980 and 1990
+
+SELECT title 
+FROM albums
+WHERE artist_id = 1;
+
+Challenge 2 - 
+Delete the album with ID 12.
+
+Use a SELECT query to get the list of albums and verify that one has been deleted.
+
+DELETE FROM albums
+WHERE id = '12';
+
+SELECT * albums;
+
+Challenge 3 - 
+nsert a new artist of your choice, and a new album related to that artist (here's an idea, if you can't pick one).
+
+Then run a SELECT query to check the new artist is now in the table.
+
+INSERT INTO artists (name, genre)
+VALUES ('Spice girls','Pop');
+
+INSERT INTO albums (title, release_year, artist_id)
+VALUES ('Spice up your life', 1997, (SELECT id FROM artists WHERE name = 'Spice girls'));
+
+SELECT * albums;
+
+
